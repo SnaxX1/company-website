@@ -1,0 +1,19 @@
+{{ define "styles" }}
+{{ $styles := resources.Get "css/single.css" | toCSS | minify }}
+<link rel="stylesheet" href="{{ $styles.Permalink }}" />
+{{ end }}
+{{ define "main" }}
+{{ partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+  <p>{{ printf "Estimated reading time: %d minutes" .ReadingTime }}</p>
+  {{ .Content }}
+  <div class="next-prev">
+  {{ with .NextInSection }}
+  <a class="prev" href="{{ .RelPermalink }}">Previous Post</a>
+{{ end }}
+
+{{ with .PrevInSection }}
+  <a class="next"  href="{{ .RelPermalink }}">Next Post</a> 
+{{ end }}
+  </div>
+{{ end }}

@@ -1,0 +1,18 @@
+{{ define "styles" }}
+{{ $styles := resources.Get "css/blog.css" | toCSS | minify }}
+<link rel="stylesheet" href="{{ $styles.Permalink }}" />
+{{ end }}
+{{ define "main" }}
+  <header class="homepage-header">
+    <div class="container3">
+        <h1>{{ .Title }}</h1>
+    </div>
+  </header>
+  <main>
+    <div class="container2">
+        {{ range where .Site.RegularPages "Type" "blog"}}
+        {{ partial "blogpost.html" . }}
+        {{ end }}
+    </div>
+  </main>
+{{ end }}

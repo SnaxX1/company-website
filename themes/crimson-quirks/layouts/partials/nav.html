@@ -1,0 +1,5 @@
+<nav class="navigation">
+    {{range site.Menus.main}}
+    <h5><a href="{{ .URL }}" class="text-[18px] font-meduim">{{ .Name }}</a></h5>
+    {{ end }}
+</nav>

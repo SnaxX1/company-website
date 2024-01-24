@@ -1,0 +1,27 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Crimson Quirks'
+theme ='crimson-quirks'
+[menu]
+[[menu.main]]
+identifer = "home"
+name = 'Home'
+url = '/'
+weight = 10
+[[menu.main]]
+identfier = "blog"
+name = 'Blog'
+url = '/blog'
+weight = 20
+[[menu.main]]
+identfier = "contact"
+name = 'Contact'
+url = '/contact'
+weight = 40
+[[menu.main]]
+identfier = "about"
+name = 'About'
+url = '/about'
+weight = 30
+
+

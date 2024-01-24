@@ -1,0 +1,17 @@
+{{ define "styles" }}
+{{ $styles := resources.Get "css/contact.css" | toCSS | minify }}
+<link rel="stylesheet" href="{{ $styles.Permalink }}" />
+{{ end }}
+{{ define "main" }}
+{{ .Content }}
+<h1>Contact</h1>
+<p class="cont">here you can contact our company for any questions or opportunities </p>
+<div class="form">
+  <form action="https://formspree.io/f/meqyeonb" method="POST">
+    <input type="text" name="text" placeholder=" Your name">
+    <input type="email" name="email" placeholder="Your email">
+    <textarea name="message" id="" cols="30" rows="10" placeholder="Your message"></textarea>
+    <button type="submit">Send</button>
+  </form>
+</div>
+{{ end }}
